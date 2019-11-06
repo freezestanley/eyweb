@@ -1,6 +1,6 @@
 {
   "name": "eyweb",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -15,6 +15,7 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "commander": "^4.0.0",
+    "cross-env": "^6.0.3",
     "cross-spawn": "^7.0.1"
   }
 }

@@ -2,6 +2,7 @@
 const command = require('commander')
 const program = new command.Command()
 const chalk = require('chalk')
+const spawn = require('cross-spawn')
 
 program
   .version('1.0.1')
