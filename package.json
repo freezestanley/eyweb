@@ -1,10 +1,10 @@
 {
   "name": "eyweb",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "bin": {
-    "eyweb": "./src/index.js"
+    "eyweb": "./bin/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
