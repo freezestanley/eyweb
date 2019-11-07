@@ -3,6 +3,7 @@ const command = require('commander')
 const program = new command.Command()
 const chalk = require('chalk')
 const spawn = require('cross-spawn')
+const path = require('path')
 
 program
   .version('1.0.1')
@@ -19,14 +20,16 @@ program
   .command('serve')
   .description('启动开发服务')
   .action((e) => {
-    const child = spawn('cross-env', ['webpack-dev-server', '--hot', '--inline', '--colors', '--config', 'build/webpack.dev.conf.js'], { stdio: 'inherit' })
+    // const child = spawn('cross-env', ['webpack-dev-server', '--hot', '--inline', '--colors', '--config', 'build/webpack.dev.conf.js'], { stdio: 'inherit' })
+    const child = spawn('node', [path.resolve(__dirname, '../build/webpack.dev.conf.js')], { stdio: 'inherit' })
   })
 
 program
   .command('build')
   .description('构建生产版本')
   .action((e) => {
-    const child = spawn('cross-env', ['NODE_ENV=production', 'webpack', '--progress', '--colors', '--config', 'build/webpack.product.conf.js'], { stdio: 'inherit' })
+    // const child = spawn('cross-env', ['NODE_ENV=production', 'webpack', '--progress', '--colors', '--config', 'build/webpack.product.conf.js'], { stdio: 'inherit' })
+    const child = spawn('node', [path.resolve(__dirname, '../build/webpack.product.conf.js')], { stdio: 'inherit' })
   })
 
 program
