@@ -1,7 +1,7 @@
 'use strict'
 const merge = require('webpack-merge')
 const webpack = require('webpack')
-const WebpackDevServer = require('webpack-dev-server')
+const webpackDevServer = require('webpack-dev-server')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -29,7 +29,7 @@ config.plugin('htmlwebpackplugin')
         {},
         {
           inject: true,
-          template: path.resolve(__dirname, '../index.html')
+          template: path.resolve(process.cwd(), './index.html')
         }
     )
     ]).end()
@@ -47,7 +47,7 @@ config.performance.hints(false)
 //   .compress(true)
 
 const options = {
-  contentBase: '../dist',
+  contentBase: path.resolve(process.cwd(), './dist'),
   hot: true,
   host: 'localhost',
   historyApiFallback: true,
