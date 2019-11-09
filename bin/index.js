@@ -2,7 +2,7 @@
 const command = require('commander')
 const program = new command.Command()
 const chalk = require('chalk')
-const spawn = require('cross-spawn')
+const execa = require('execa')
 const path = require('path')
 const fs = require('fs')
 const utils = require('../lib')
@@ -23,7 +23,7 @@ program
   .description('启动开发服务')
   .action((e) => {
     // const child = spawn('cross-env', ['webpack-dev-server', '--hot', '--inline', '--colors', '--config', 'build/webpack.dev.conf.js'], { stdio: 'inherit' })
-    const child = spawn('node', [path.resolve(__dirname, '../build/webpack.dev.conf.js')], { stdio: 'inherit' })
+    // const child = spawn('node', [path.resolve(__dirname, '../build/webpack.dev.conf.js')], { stdio: 'inherit' })
   })
 
 program
@@ -31,14 +31,14 @@ program
   .description('构建生产版本')
   .action((e) => {
     // const child = spawn('cross-env', ['NODE_ENV=production', 'webpack', '--progress', '--colors', '--config', 'build/webpack.product.conf.js'], { stdio: 'inherit' })
-    const child = spawn('node', [path.resolve(__dirname, '../build/webpack.product.conf.js')], { stdio: 'inherit' })
+    // const child = spawn('node', [path.resolve(__dirname, '../build/webpack.product.conf.js')], { stdio: 'inherit' })
   })
 
 program
   .command('lint')
   .description('静态扫描')
   .action((e) => {
-    const child = spawn('eslint', ['--ext', '.jsx,.js', 'src', '-f', 'checkstyle', '-o', 'report_zacc_eslint_js.xml;', 'exit', '0'], { stdio: 'inherit' })
+    // const child = spawn('eslint', ['--ext', '.jsx,.js', 'src', '-f', 'checkstyle', '-o', 'report_zacc_eslint_js.xml;', 'exit', '0'], { stdio: 'inherit' })
   })
 
 program
@@ -46,7 +46,6 @@ program
   .description('静态扫描')
   .action((e) => {
     const result = utils.readerZarc()
-    console.log(result)
   })
 
 program.parse(process.argv)
