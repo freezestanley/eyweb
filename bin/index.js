@@ -5,6 +5,7 @@ const chalk = require('chalk')
 const spawn = require('cross-spawn')
 const path = require('path')
 const fs = require('fs')
+const utils = require('../lib')
 
 program
   .version('1.0.1')
@@ -44,9 +45,8 @@ program
   .command('init')
   .description('静态扫描')
   .action((e) => {
-    fs.writeFile("img1.txt","课工场",function(err){
-      console.log(err)
-    })
+    const result = utils.readerZarc()
+    console.log(result)
   })
 
 program.parse(process.argv)
