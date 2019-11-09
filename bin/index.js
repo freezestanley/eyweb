@@ -4,6 +4,7 @@ const program = new command.Command()
 const chalk = require('chalk')
 const spawn = require('cross-spawn')
 const path = require('path')
+const fs = require('fs')
 
 program
   .version('1.0.1')
@@ -37,6 +38,15 @@ program
   .description('静态扫描')
   .action((e) => {
     const child = spawn('eslint', ['--ext', '.jsx,.js', 'src', '-f', 'checkstyle', '-o', 'report_zacc_eslint_js.xml;', 'exit', '0'], { stdio: 'inherit' })
+  })
+
+program
+  .command('init')
+  .description('静态扫描')
+  .action((e) => {
+    fs.writeFile("img1.txt","课工场",function(err){
+      console.log(err)
+    })
   })
 
 program.parse(process.argv)
