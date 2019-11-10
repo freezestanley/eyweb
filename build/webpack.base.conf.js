@@ -102,9 +102,6 @@ config.module.rule('less')
   .use('less')
   .loader('less-loader')
   .end()
-  .use('js2style')
-  .loader('js-to-styles-var-loader')
-  .end()
 
 config.module.rule('css')
   .test(/\.css$/i)
@@ -121,8 +118,7 @@ config.module.rule('css')
       require('postcss-import')({ root: loader.resourcePath }),
       require('postcss-selector-namespace')({ selfSelector: ':namespace', namespace: `` })
     ]}).end()
-  .use('js2style')
-  .loader('js-to-styles-var-loader').end()
+
 
   config.module.rule('sass')
   .test(/\.s[ac]ss$/i)
@@ -141,8 +137,7 @@ config.module.rule('css')
     ]}).end()
   .use('sass')
   .loader('sass-loader').end()
-  .use('js2style')
-  .loader('js-to-styles-var-loader').end()
+
 
 config.module.rule('images')
   .test(/\.(png|jpg|gif)$/i)

@@ -61,5 +61,5 @@ const server = new webpackDevServer(compiler, options)
 server.listen(5000, 'localhost', () => {
   console.log('dev server listening on port 5000');
 })
-
+console.log(config.toString())
 module.exports = merge({}, config.toConfig())
