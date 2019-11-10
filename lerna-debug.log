@@ -1,4 +1,4 @@
-32 error Error: Command failed: git add -- packages/eyweb-plugins-sass/package.json packages/eyweb-plugins-sass/package-lock.json packages/eyweb-plugins-less/package.json packages/eyweb-plugins-less/package-lock.json lerna.json
+32 error Error: Command failed: git add -- packages/eyweb-plugins-less/package.json packages/eyweb-plugins-less/package-lock.json packages/eyweb-plugins-sass/package.json packages/eyweb-plugins-sass/package-lock.json lerna.json
 32 error fatal: Pathspec 'packages/eyweb-plugins-less/package.json' is in submodule 'packages/eyweb-plugins-less'
 32 error
 32 error     at makeError (/Users/stanleyxu/Documents/ff/eyweb/node_modules/execa/index.js:174:9)
